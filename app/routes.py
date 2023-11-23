@@ -1,6 +1,6 @@
 # RecomMix/app/routes.py
 
-from flask import render_template
+from flask import render_template, Flask, request, jsonify
 from app import app
 from .recommendation.data_processing import fetch_songs_from_api, extract_audio_features, preprocess_data, normalize_data, save_data_to_database
 
@@ -26,3 +26,42 @@ def data_collection_and_preprocessing():
     save_data_to_database(normalized_data, table_name)
 
     return "Data collection and preprocessing completed!"
+
+# Assume playlists is a list or dictionary containing playlist data
+playlists = {
+    'playlist1': ['song1', 'song2', 'song3'],
+    'playlist2': ['song4', 'song5'],
+    # ...
+}
+
+# Route to edit a playlist
+@app.route('/api/playlists/<playlist_name>', methods=['PUT'])
+def edit_playlist(playlist_name):
+    try:
+        # Get the new playlist name from the request JSON
+        new_name = request.json['newName']
+        
+        # Update the playlist name
+        playlists[new_name] = playlists.pop(playlist_name)
+        
+        return jsonify({'message': 'Playlist edited successfully'}), 200
+    except KeyError:
+        return jsonify({'error': 'New playlist name not provided in the request'}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# Route to delete a playlist
+@app.route('/api/playlists/<playlist_name>', methods=['DELETE'])
+def delete_playlist(playlist_name):
+    try:
+        # Delete the playlist
+        del playlists[playlist_name]
+        
+        return jsonify({'message': 'Playlist deleted successfully'}), 200
+    except KeyError:
+        return jsonify({'error': f'Playlist "{playlist_name}" not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True)

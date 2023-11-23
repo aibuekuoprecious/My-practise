@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>RecomMix Recommendation System</title>
+    <!-- Add any additional styling or libraries here -->
+</head>
+<body>
+    <header>
+        <h1>RecomMix Recommendation System</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <label for="searchInput">Search for songs:</label>
+            <input type="text" id="searchInput" placeholder="Enter song name...">
+            <button onclick="searchSongs()">Search</button>
+        </div>
+
+        <div class="user-input-container">
+            <label for="targetUser">Target User:</label>
+            <input type="text" id="targetUser" placeholder="Enter target user">
+            
+            <label for="likedSongs">Liked Songs (comma-separated):</label>
+            <input type="text" id="likedSongs" placeholder="Enter liked songs">
+        </div>
+
+        <button onclick="getRecommendations()">Get Recommendations</button>
+
+        <div id="songInfo" class="song-info-container">
+            <!-- Display song details dynamically here -->
+        </div>
+
+        <div class="playback-container">
+            <audio controls id="audioPlayer">
+                <!-- Provide playback options here -->
+            </audio>
+        </div>
+
+        <div class="feedback-container">
+            <button onclick="collectUserFeedback('like')">Like</button>
+            <button onclick="collectUserFeedback('dislike')">Dislike</button>
+        </div>
+
+        <div class="playlist-container">
+            <label for="playlistName">Playlist Name:</label>
+            <input type="text" id="playlistName" placeholder="Enter playlist name...">
+            <button onclick="createPlaylist()">Create Playlist</button>
+            <button onclick="addToPlaylist('songId')">Add to Playlist</button>
+        </div>
+
+        <div class="playlist-management-container">
+            <button onclick="editPlaylist('playlistName')">Edit Playlist</button>
+            <button onclick="deletePlaylist('playlistName')">Delete Playlist</button>
+        </div>
+
+        <h2>Final Recommendations:</h2>
+        <ul id="finalRecommendations"></ul>
+    </main>
+
+    <script src="recommendation_engine.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/interaction.js') }}"></script>
+    <!-- Add any additional scripts or libraries here -->
+</body>
+</html>

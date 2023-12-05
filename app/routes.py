@@ -1,10 +1,15 @@
-# RecomMix/app/routes.py
+# app/routes.py
 
-from flask import render_template, Flask, request, jsonify
-from app import app
+from flask import Blueprint, render_template, Flask, request, jsonify
 from .recommendation.data_processing import fetch_songs_from_api, extract_audio_features, preprocess_data, normalize_data, save_data_to_database
 
-@app.route('/data_collection_and_preprocessing')
+bp = Blueprint('routes_bp', __name__)
+
+@bp.route('/')
+def home():
+    return render_template('index.html')
+
+@bp.route('/data_collection_and_preprocessing')
 def data_collection_and_preprocessing():
     # Define your API endpoint
     api_endpoint = 'https://api.spotify.com/v1/me/tracks'
@@ -35,7 +40,7 @@ playlists = {
 }
 
 # Route to edit a playlist
-@app.route('/api/playlists/<playlist_name>', methods=['PUT'])
+@bp.route('/api/playlists/<playlist_name>', methods=['PUT'])
 def edit_playlist(playlist_name):
     try:
         # Get the new playlist name from the request JSON
@@ -51,7 +56,7 @@ def edit_playlist(playlist_name):
         return jsonify({'error': str(e)}), 500
 
 # Route to delete a playlist
-@app.route('/api/playlists/<playlist_name>', methods=['DELETE'])
+@bp.route('/api/playlists/<playlist_name>', methods=['DELETE'])
 def delete_playlist(playlist_name):
     try:
         # Delete the playlist
@@ -62,6 +67,3 @@ def delete_playlist(playlist_name):
         return jsonify({'error': f'Playlist "{playlist_name}" not found'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
-if __name__ == '__main__':
-    app.run(debug=True)

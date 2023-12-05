@@ -8,7 +8,7 @@ function displaySearchResults(searchResults) {
     searchResults.forEach(result => {
         let resultItem = document.createElement('div');
         resultItem.textContent = result;
-        searchResultsContainer.appendChild(resultItem);
+        searchResultsContainer.create_appendChild(resultItem);
     });
 }
 
@@ -42,9 +42,9 @@ function displaySongInfo(songDetails) {
     let albumElement = document.createElement('p');
     albumElement.textContent = `Album: ${songDetails.album}`;
 
-    songInfoContainer.appendChild(titleElement);
-    songInfoContainer.appendChild(artistElement);
-    songInfoContainer.appendChild(albumElement);
+    songInfoContainer.create_appendChild(titleElement);
+    songInfoContainer.create_appendChild(artistElement);
+    songInfoContainer.create_appendChild(albumElement);
 }
 
 // Function to set the song URL for playback
@@ -64,7 +64,7 @@ function collectUserFeedback(response) {
     fetch('/api/feedback', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'create_application/json',
         },
         body: JSON.stringify(userFeedback),
     })
@@ -89,7 +89,7 @@ function createPlaylist() {
     fetch('/api/playlists', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'create_application/json',
         },
         body: JSON.stringify({ name: playlistName }),
     })

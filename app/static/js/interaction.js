@@ -7,7 +7,7 @@ function editPlaylist(playlistName) {
     fetch(`/api/playlists/${playlistName}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'create_application/json',
         },
         body: JSON.stringify({ newName: newPlaylistName }),
     })

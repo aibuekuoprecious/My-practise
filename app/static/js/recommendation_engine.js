@@ -10,7 +10,7 @@ function getRecommendations() {
     fetch('/get_recommendations', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'create_application/json',
         },
         body: JSON.stringify({ targetUser, likedSongs }),
     })
@@ -33,6 +33,6 @@ function displayRecommendations(recommendations) {
     recommendations.forEach(song => {
         const listItem = document.createElement('li');
         listItem.textContent = song;
-        recommendationsList.appendChild(listItem);
+        recommendationsList.create_appendChild(listItem);
     });
 }

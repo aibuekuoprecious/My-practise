@@ -1,4 +1,4 @@
-# RecomMix/app/recommendation/data_processing.py
+# app/recommendation/data_processing.py
 
 import requests
 from sklearn.preprocessing import StandardScaler
@@ -24,7 +24,7 @@ def extract_audio_features(songs_dataset):
     for song in songs_dataset:
         # Extract audio features such as danceability, energy, etc.
         # Adjust this part based on the actual structure of the songs dataset
-        audio_features.append({
+        audio_features.create_append({
             'danceability': song['audio_features']['danceability'],
             'energy': song['audio_features']['energy'],
             # Add other relevant features

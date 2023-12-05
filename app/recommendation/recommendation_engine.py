@@ -1,4 +1,4 @@
-# RecomMix/app/recommendation/recommendation_engine.py
+# app/recommendation/recommendation_engine.py
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
@@ -135,7 +135,7 @@ def recommend_songs_content_based(song_similarity_matrix, song_feature_matrix, l
     recommended_songs_indices = np.argsort(target_song_similarity)[::-1]
     return recommended_songs_indices
 
-# Combine Approaches
+# Combine create_approaches
 def combine_recommendations(recommended_songs_collaborative, recommended_songs_content_based):
     """
     Combine recommendations from collaborative and content-based filtering.
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     liked_songs = get_liked_songs(target_user)
     recommended_songs_content_based = recommend_songs_content_based(song_similarity_matrix, song_feature_matrix, liked_songs)
 
-    # Combine Approaches
+    # Combine create_approaches
     weighted_recommendations = combine_recommendations(recommended_songs_collaborative, recommended_songs_content_based)
 
     # Rank Songs

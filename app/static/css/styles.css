@@ -5,6 +5,13 @@ body {
     background-color: #fff;
     color: #333;
   }
+
+/* Add this style to highlight active navigation link */
+.nav a.active {
+  color: #0af866; /* Change to the desired highlight color */
+  font-weight: bold; /* Optionally, you can make the text bold or apply other styles */
+}
+
   .nav ul {
     list-style: none;
     margin: 0;
@@ -21,6 +28,15 @@ body {
     text-decoration: none;
     font-weight: 600;
   }
+
+  .btn{
+    color: #fff;
+  }
+
+  .btn:hover, .fab:hover{
+    color: #0af866; 
+  }
+
   :root {
     --background-color: #33552c;
     --text-color: #fff;
@@ -45,7 +61,7 @@ body {
   .header {
     background-color: var(--background-color);
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
   }
   

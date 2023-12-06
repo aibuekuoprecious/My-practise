@@ -1,34 +1,17 @@
-// Change text color
-const backgroundElement = document.querySelector('.main');
+// Highlight navigation
+function highlightActiveLink() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav a');
 
-const observer = new MutationObserver(() => {
-  updateTextColor();
-});
-
-// Observe changes to attributes, style, and childList
-observer.observe(backgroundElement, { attributes: true, childList: true, subtree: true });
-
-// Use 'load' event to ensure the '.main' element is present
-window.addEventListener('load', () => {
-  updateTextColor(); // Initial update on page load
-});
-
-function calculateContrastingColor(backgroundColor) {
-  const rgbValues = backgroundColor.match(/\d+/g).map(Number);
-  const brightness = (rgbValues[0] * 299 + rgbValues[1] * 587 + rgbValues[2] * 114) / 1000;
-
-  return brightness > 128 ? '#000' : '#fff';
+  for (const link of navLinks) {
+    link.classList.remove('active');
+    if (link.href.endsWith(currentPath)) {
+      link.classList.add('active');
+    }
+  }
 }
 
-function updateTextColor() {
-  const backgroundColor = window.getComputedStyle(backgroundElement).backgroundColor;
-  const newTextColor = calculateContrastingColor(backgroundColor);
-
-  document.documentElement.style.setProperty('--text-color', newTextColor);
-}
-
-
-
+// Your other functions...
 // Function to display search results
 function displaySearchResults(searchResults) {
     let searchResultsContainer = document.getElementById('searchResults');

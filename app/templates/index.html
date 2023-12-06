@@ -8,6 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script defer>
+        // Highlight navigation for the 'about' page
+        window.addEventListener('load', () => {
+          highlightActiveLink();
+        });
+      </script>
+      
 </head>
 <body>
     <nav class="header nav">
@@ -19,15 +26,14 @@
     </nav>
 
     <header class="header">
-        <div class="container">
-            <h1 class="header__title">RecomMix Recommendation System</h1>
-        </div>
+        <!--  <img src="path/to/cover-image.jpg" alt="RecomMix Cover Image"> -->
+         <h1 class="header__title">RecomMix Recommendation System</h1>
+         <p>Discover Personalized Music Recommendations</p>
     </header>
+       
 
     <main class="main">
         <div class="container">
-            <h2 class="main__heading">Discover Personalized Music Recommendations</h2>
-
             <div class="search-container">
                 <label for="searchInput">Search for songs:</label>
                 <div class="search">
@@ -73,9 +79,9 @@
     <footer>
         <div class="team-member">
             <h3>Aibueku Precious Okwuoma</h3>
-            <a href="link-to-linkedin-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="link-to-github-profile" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="link-to-twitter-profile" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/aibuekuoprecious/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/aibuekuoprecious" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/pre_shial" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 </body>

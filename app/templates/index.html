@@ -1,62 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RecomMix Recommendation System</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecomMix Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
 <body>
-  <header class="header">
-    <div class="container">
-      <h1 class="header__title">RecomMix Recommendation System</h1>
-    </div>
-  </header>
+    <nav class="header nav">
+        <ul>
+            <li><a href="{{ url_for('routes_bp.home') }}">Home</a></li>
+            <li><a href="{{ url_for('routes_bp.about') }}">About</a></li>
+            <!-- Add other navigation links as needed -->
+        </ul>
+    </nav>
 
-  <main class="main">
-    <div class="container">
-      <h2 class="main__heading">Discover Personalized Music Recommendations</h2>
-
-      <div class="search-container">
-        <label for="searchInput">Search for songs:</label>
-        <div class="search">
-          <input type="text" id="searchInput" class="search__input" placeholder="Enter song name...">
-          <button onclick="searchSongs()" class="search__button">Search</button>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">RecomMix Recommendation System</h1>
         </div>
-      </div>
+    </header>
 
-      <div class="user-input-container">
-        <label for="targetUser">Target User:</label>
-        <input type="text" id="targetUser" class="user-input" placeholder="Enter target user">
+    <main class="main">
+        <div class="container">
+            <h2 class="main__heading">Discover Personalized Music Recommendations</h2>
 
-        <label for="likedSongs">Liked Songs (comma-separated):</label>
-        <input type="text" id="likedSongs" class="user-input" placeholder="Enter liked songs">
-      </div>
+            <div class="search-container">
+                <label for="searchInput">Search for songs:</label>
+                <div class="search">
+                    <input type="text" id="searchInput" class="search__input" placeholder="Enter song name...">
+                    <button onclick="searchSongs()" class="search__button">Search</button>
+                </div>
+            </div>
 
-      <div class="control-buttons">
-        <button onclick="getRecommendations()" class="button button--primary">Get Recommendations</button>
-      </div>
+            <div class="user-input-container">
+                <label for="targetUser">Target User:</label>
+                <input type="text" id="targetUser" class="user-input" placeholder="Enter target user">
 
-      <div id="songInfo" class="song-info-container">
+                <label for="likedSongs">Liked Songs (comma-separated):</label>
+                <input type="text" id="likedSongs" class="user-input" placeholder="Enter liked songs">
+            </div>
+
+            <div class="control-buttons">
+                <button onclick="getRecommendations()" class="button button--primary">Get Recommendations</button>
+            </div>
+
+            <div id="songInfo" class="song-info-container"></div>
+
+            <div class="playback-container">
+                <audio controls id="audioPlayer" class="audio-player"></audio>
+            </div>
+
+            <div class="feedback-container">
+                <button onclick="collectUserFeedback('like')" class="feedback-button feedback-button--like">Like</button>
+                <button onclick="collectUserFeedback('dislike')" class="feedback-button feedback-button--dislike">Dislike</button>
+            </div>
+
+            <div class="playlist-container">
+                <label for="playlistName">Playlist Name:</label>
+                <input type="text" id="playlistName" class="user-input" placeholder="Enter playlist name...">
+
+                <div class="control-buttons">
+                    <button onclick="createPlaylist()" class="button button">Create Playlist</button>
+                </div>
+            </div>
         </div>
+    </main>
 
-      <div class="playback-container">
-        <audio controls id="audioPlayer" class="audio-player">
-          </audio>
-      </div>
-
-      <div class="feedback-container">
-        <button onclick="collectUserFeedback('like')" class="feedback-button feedback-button--like">Like</button>
-        <button onclick="collectUserFeedback('dislike')" class="feedback-button feedback-button--dislike">Dislike</button>
-      </div>
-
-      <div class="playlist-container">
-        <label for="playlistName">Playlist Name:</label>
-        <input type="text" id="playlistName" class="user-input" placeholder="Enter playlist name...">
-
-        <div class="control-buttons">
-          <button onclick="createPlaylist()" class="button button
+    <footer>
+        <div class="team-member">
+            <h3>Aibueku Precious Okwuoma</h3>
+            <a href="link-to-linkedin-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="link-to-github-profile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="link-to-twitter-profile" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

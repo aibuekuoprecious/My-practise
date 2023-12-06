@@ -5,9 +5,24 @@ body {
     background-color: #fff;
     color: #333;
   }
-
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
   :root {
-    --background-color: #25a70b;
+    --background-color: #33552c;
     --text-color: #fff;
   }
   
@@ -17,24 +32,18 @@ body {
     padding: 20px;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, p {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-color);
     opacity: 0.9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-align: center;
   }
-  
-  p {
-    font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    opacity: 0.9;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-    
+
   /* Header */
   
   .header {
-    background-color: #25a70b;
+    background-color: var(--background-color);
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -49,7 +58,7 @@ body {
   
   .main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-image: url('https://picsum.photos/2000/1000?grayscale&blur=2');
+    background-image: url('https://picsum.photos/2000/1000?blur=2');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -201,6 +210,29 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: #fff;
   }
+
+   /* Footer */
+ footer {
+  background-color: var(--background-color); /* Change background color as needed */
+  color: #fff; /* Change text color as needed */
+  padding: 5px 0;
+  text-align: center; /* Center the content */
+  width: 100%;
+}
+
+.team-member {
+  margin-bottom: 5px; /* Add spacing between team members */
+}
+
+.team-member h3 {
+  font-size: 18px; /* Adjust font size for team member names */
+  font-weight: 500; /* Adjust font weight for team member names */
+  margin-bottom: 5px; /* Add spacing after team member names */
+}
+
+footer .team-member i {
+  color: white;
+}
 
 /* Responsive styles */
 

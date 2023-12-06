@@ -9,6 +9,10 @@ bp = Blueprint('routes_bp', __name__)
 def home():
     return render_template('index.html')
 
+@bp.route('/about')
+def about():
+    return render_template('about.html')
+
 @bp.route('/data_collection_and_preprocessing')
 def data_collection_and_preprocessing():
     # Define your API endpoint

@@ -5,6 +5,11 @@ body {
     background-color: #fff;
     color: #333;
   }
+
+  :root {
+    --background-color: #25a70b;
+    --text-color: #fff;
+  }
   
   .container {
     max-width: 900px;
@@ -14,14 +19,14 @@ body {
 
   h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
+    color: var(--text-color);
     opacity: 0.9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   p {
     font-family: 'Arial', sans-serif;
-    color: #fff;
+    color: var(--text-color);
     opacity: 0.9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
@@ -93,7 +98,8 @@ body {
     padding: 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
+    width: 97%;
+    margin: 0 auto;
   }
   
   /* Control buttons */
@@ -195,3 +201,30 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: #fff;
   }
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  /* Adjust container width for smaller screens */
+  .container {
+    max-width: 600px;
+  }
+
+  /* Adapt search and user input container layout */
+  .search-container,
+  .user-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Labels for search and user input containers */
+  .search-container label,
+  .user-input-container label {
+    margin-bottom: 10px;
+  }
+
+  .user-input {
+    width: 92.5%;
+  }
+}

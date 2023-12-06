@@ -11,7 +11,7 @@ function highlightActiveLink() {
   }
 }
 
-// Your other functions...
+// My other functions...
 // Function to display search results
 function displaySearchResults(searchResults) {
     let searchResultsContainer = document.getElementById('searchResults');
@@ -92,7 +92,7 @@ function collectUserFeedback(response) {
 // Function to update the user-song matrix
 function updateUserSongMatrix(userFeedback) {
     // Send the feedback to the backend using AJAX/fetch
-    // This function can be implemented based on your backend requirements
+    // This function can be implemented based on my backend requirements
 }
 
 // Function to create a playlist

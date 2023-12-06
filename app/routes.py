@@ -15,7 +15,7 @@ def about():
 
 @bp.route('/data_collection_and_preprocessing')
 def data_collection_and_preprocessing():
-    # Define your API endpoint
+    # Define my API endpoint
     api_endpoint = 'https://api.spotify.com/v1/me/tracks'
 
     # Step 1: Fetch songs dataset using an API

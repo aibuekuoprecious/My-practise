@@ -193,7 +193,7 @@ def get_song_indices_from_names(song_names):
 
 # Example Usage
 if __name__ == "__main__":
-    # Assume you have normalized data
+    # Assume I have normalized data
     normalized_data = ...  
 
     # Collaborative Filtering

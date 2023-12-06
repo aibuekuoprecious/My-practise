@@ -9,7 +9,7 @@ body {
 /* Add this style to highlight active navigation link */
 .nav a.active {
   color: #0af866; /* Change to the desired highlight color */
-  font-weight: bold; /* Optionally, you can make the text bold or apply other styles */
+  font-weight: bold; /* Optionally, I can make the text bold or apply other styles */
 }
 
   .nav ul {
@@ -258,7 +258,7 @@ footer .team-member i {
     max-width: 600px;
   }
 
-  /* Adapt search and user input container layout */
+  /* Adapt search and user input container laIt */
   .search-container,
   .user-input-container {
     display: flex;

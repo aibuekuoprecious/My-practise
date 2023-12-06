@@ -20,7 +20,7 @@ function editPlaylist(playlistName) {
 
 // Function to delete a playlist
 function deletePlaylist(playlistName) {
-    let confirmDeletion = confirm(`Are you sure you want to delete the playlist "${playlistName}"?`);
+    let confirmDeletion = confirm(`Are I sure I want to delete the playlist "${playlistName}"?`);
     
     if (confirmDeletion) {
         fetch(`/api/playlists/${playlistName}`, {
